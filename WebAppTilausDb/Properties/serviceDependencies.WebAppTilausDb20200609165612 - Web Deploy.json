@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroup')]/providers/Microsoft.Sql/servers/srvtilausdb2/databases/tilausdb",
+      "type": "mssql.azure",
+      "connectionId": "tilausdb",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}

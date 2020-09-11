@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WebAppTilausDb.Models.Tuotteet>
+
+@{
+    ViewBag.Title = "Tuotteet";
+}
+
+
+    <h2>Tilausrivit</h2>
+<div class="container-fluid">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="card mb-3 col-sm-3">
+                @*W3schoolsista haettu vinkit gridiin/korttinäyttö Bootswatchista*@
+                <h3 class="card-header">@item.Nimi</h3>
+                <div class="card-body">
+                    <h5 class="card-title">@item.Ahinta.Value.ToString("c")</h5> @*näyttää summan rahana*@
+
+                </div>
+                <img style="height: 200px; width: 100%; display: block;" src="@item.Kuva" alt="@item.Kuva">
+                <div class="card-body">
+                    
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"> @Html.ActionLink("Luo uusi", "Create") </li>
+                    
+                    <li class="list-group-item">@Html.ActionLink("Muokkaa", "Edit", new { id = item.TuoteID })</li>
+
+                    <li class="list-group-item"> @Html.ActionLink("Poista", "Delete", new { id = item.TuoteID })</li>
+                </ul>
+
+                <div class="card-footer text-muted">
+                    @item.TuoteID
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+   
